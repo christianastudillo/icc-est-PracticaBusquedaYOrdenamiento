@@ -6,8 +6,11 @@ public class Controller {
     private View view;
     private SortingMethods sortingMethods;
     private SearchMethods searchMethods;
-    private Person[] persons;
+    private Person[] personas;
     public Controller(View view, SortingMethods sortingMethods, SearchMethods searchMethods){
-
+        this.view = view;
+        this.searchMethods = searchMethods;
+        this.sortingMethods = sortingMethods;
+        System.out.println("Controller Created");
     }
 }
