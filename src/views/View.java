@@ -1,15 +1,11 @@
 package views;
-
 import java.util.Scanner;
 import models.Person;
-
 public class View {
     private Scanner scanner;
-
     public View() {
         scanner = new Scanner(System.in);
     }
-
     public int showMenu() {
         System.out.println("Menu:");
         System.out.println("1. Ingresar Personas");
@@ -21,24 +17,20 @@ public class View {
         System.out.print("Ingrese una opción: ");
         return scanner.nextInt(); 
     }
-
     public int inputInt(String message) {
         System.out.println(message);
         return scanner.nextInt();
     }
-
     public Person inputPerson() {
         String name = inputName();  
         int age = inputAge(); 
         System.out.println("--------------");     
         return new Person(name, age); 
     }
-
     public String inputName() {
         System.out.print("Ingrese nombre: ");
         return scanner.next();
     }
-
     public int inputAge() {
         System.out.print("Ingrese edad: ");
         return scanner.nextInt();
@@ -46,13 +38,6 @@ public class View {
     public void showMessage(String message) {
         System.out.println("LOG" + message);
     }
-    // public int selectSortingMethod() {
-    //     System.out.println("Ingrese la condicion: ");
-    //     System.out.println("1. Ordenamiento por nombre");
-    //     System.out.println("2. Ordenamiento por edad");
-    //     System.out.print("Ingrese un método de ordenamiento: ");
-    //     return scanner.nextInt();
-    // }
     public void showPersons(Person[] personas) {
         for (Person persona : personas) {
             System.out.println(persona);
@@ -63,10 +48,9 @@ public class View {
             System.out.println("No hay personas para mostrar.");
             return;
         }
-
         System.out.println("Lista de personas:");
         for (Person persona : personas) {
-            System.out.println(persona);  // Asumiendo que la clase Person tiene el método toString() implementado.
+            System.out.println(persona); 
         }
     }
     public int selectSortingMethod() {
@@ -77,6 +61,5 @@ public class View {
         System.out.println("4. Ordenamiento por edad (Selección)");
         System.out.print("Ingrese un método de ordenamiento: ");
         return scanner.nextInt();
-    }
-    
+    } 
 }

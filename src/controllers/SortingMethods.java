@@ -50,11 +50,9 @@ public class SortingMethods {
         }
         return personas;
     }
-
     // Método de selección para ordenar por edad
     public Person[] sortByAgeWithSelection(Person[] personas) {
         int tamanio = personas.length;
-
         for (int i = 0; i < tamanio - 1; i++) {
             int indice = i;
             for (int j = i + 1; j < tamanio; j++) {
