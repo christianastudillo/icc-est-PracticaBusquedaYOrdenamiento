@@ -26,10 +26,18 @@ public class Controller {
                     inputPersons();
                     break;
                 case 2:
-                    addPerson();
+                    //view.displayPersons(personas);
+                    //view.showPersons(personas);
+                    view.displayPersons(personas);
                     break;
                 case 3:
                     sortPersons();
+                    break;
+                case 4:
+                    //searchPersonByAge();
+                    break;
+                case 5:
+                    //searchPersonByName();
                     break;
                 case 100:
                     System.out.println("Adiós");
@@ -42,13 +50,18 @@ public class Controller {
     }
     public void sortPersons() {
         int sortingOption = view.selectSortingMethod();
-        if(sortingOption == 1) {
-            sortingMethods.sortByNameWhithBuble(personas);
-        }else if(sortingOption == 2) {
-            sortingMethods.sortByNameWhithSelection(personas);
-        }else{
-            view.showMessage("Opcion no válida");
+        if (sortingOption == 1) {
+            sortingMethods.sortByNameWithBubble(personas);
+        } else if (sortingOption == 2) {
+            sortingMethods.sortByNameWithSelection(personas);
+        } else if (sortingOption == 3) {
+            sortingMethods.sortByAgeWithBubble(personas); // Cambio: agregar opción para ordenar por edad
+        } else if (sortingOption == 4) {
+            sortingMethods.sortByAgeWithSelection(personas); // Cambio: agregar opción para ordenar por edad
+        } else {
+            view.showMessage("Opción no válida");
         }
+        view.displayPersons(personas);
     }
 
     public void inputPersons() {
@@ -62,7 +75,7 @@ public class Controller {
 
     public void addPerson() {
         if(personas == null) {
-            view.println("No existen personas");
+            view.showMessage("No existen personas");
             inputPersons();
         }
         int numeroPersonas = view.inputInt("Ingrese el número de personas a agregar: ");

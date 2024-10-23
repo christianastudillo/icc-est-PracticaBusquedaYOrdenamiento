@@ -18,5 +18,6 @@ public class App {
         Controller controller = new Controller(vista, sortingMethods, null);
         
         //
+        controller.start();
     }
 }
